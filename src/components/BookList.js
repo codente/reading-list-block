@@ -4,11 +4,13 @@ export default function BookList( { books } ) {
         return null;
     }
 
+    const { showImage, showContent } = attributes;
+
     return books.map( ( book ) => (
         <div>
             <h2>{ book.title.rendered }</h2>
-            <img src={ book.featured_image_src } />
-            <div dangerouslySetInnerHTML={ { __html: book.content.rendered } }></div>
+        { showImage && <img src={ book.featured_image_src } /> }
+        { showContent && <div dangerouslySetInnerHTML={ { __html: book.content.rendered } }></div> }
         </div>
     ) );
 

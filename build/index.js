@@ -73,9 +73,13 @@ function BookList({
   if (!books) {
     return null;
   }
-  return books.map(book => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, book.title.rendered), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+  const {
+    showImage,
+    showContent
+  } = attributes;
+  return books.map(book => (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, book.title.rendered), showImage && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: book.featured_image_src
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }), showContent && (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     dangerouslySetInnerHTML: {
       __html: book.content.rendered
     }
