@@ -1,4 +1,4 @@
-export default function BookList( { books } ) {
+export default function BookList( { books, attributes } ) {
 
     if ( ! books ) {
         return null;
