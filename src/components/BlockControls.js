@@ -4,7 +4,7 @@ import { Panel, PanelBody, ToggleControl } from '@wordpress/components';
 
 export default function BlockControls( { attributes, setAttributes }  ) {
 
-    const { showContent, showImage } = attributes;
+    const { showImage, showContent } = attributes;
 
     return (
 

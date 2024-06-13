@@ -26,8 +26,8 @@ function BlockControls({
   setAttributes
 }) {
   const {
-    showContent,
-    showImage
+    showImage,
+    showContent
   } = attributes;
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
     key: "setting"
@@ -153,12 +153,6 @@ function Edit({
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_BlockControls__WEBPACK_IMPORTED_MODULE_5__["default"], {
     attributes: attributes,
     setAttributes: setAttributes
-  }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "p",
-    value: attributes.content,
-    onChange: content => setAttributes({
-      content
-    })
   }), (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_BookList__WEBPACK_IMPORTED_MODULE_6__["default"], {
     books: books,
     attributes: attributes
