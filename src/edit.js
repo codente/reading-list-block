@@ -12,7 +12,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps  } from '@wordpress/block-editor';
+import { useBlockProps, RichText  } from '@wordpress/block-editor';
 import { useSelect } from '@wordpress/data';
 import { store as coreDataStore } from '@wordpress/core-data';
 
@@ -46,8 +46,7 @@ export default function Edit({ attributes, setAttributes }) {
 
     return (
         <div { ...useBlockProps() }>
-		<BlockControls attributes={ attributes } setAttributes={ setAttributes } />
-        
+	   <BlockControls attributes={ attributes } setAttributes={ setAttributes } />
        <BookList books={ books } attributes={ attributes } />
         </div>
     );

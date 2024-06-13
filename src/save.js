@@ -4,7 +4,10 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
+import { __ } from '@wordpress/i18n';
 import { useBlockProps } from '@wordpress/block-editor';
+import { select } from '@wordpress/data';
+import BookList from './components/BookList';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,10 +18,14 @@ import { useBlockProps } from '@wordpress/block-editor';
  *
  * @return {Element} Element to render.
  */
-export default function save() {
+export default function save( { attributes } ) {
+
+	const books = select( 'core' ).getEntityRecords( 'postType', 'book' );
+	
 	return (
-		<p { ...useBlockProps.save() }>
-			{ 'My Reading List – hello from the saved content!' }
-		</p>
-	);
+        <div {...useBlockProps.save()}>
+            <p>{__( 'My Reading List – hello from the saved content!', 'my-reading-list' )}</p>
+            <BookList books={ books } attributes={ attributes } />
+        </div>
+    );
 }
