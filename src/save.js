@@ -18,14 +18,6 @@ import BookList from './components/BookList';
  *
  * @return {Element} Element to render.
  */
-export default function save( { attributes } ) {
-
-	const books = select( 'core' ).getEntityRecords( 'postType', 'book' );
-	
-	return (
-        <div {...useBlockProps.save()}>
-            <p>{__( 'My Reading List – hello from the saved content!', 'my-reading-list' )}</p>
-            <BookList books={ books } attributes={ attributes } />
-        </div>
-    );
+export default function save() {
+    return null;
 }
